@@ -2,6 +2,8 @@
 
 A polished golf performance app with dashboard insights, performance trends, course statistics, and CSV import/export.
 
+**Live site:** https://garund9-hash.github.io/golf-dashboard-v3/
+
 ## Features
 
 ### Dashboard

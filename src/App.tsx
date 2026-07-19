@@ -6,10 +6,12 @@ import { TrendsPage } from './pages/TrendsPage';
 import { CoursesPage } from './pages/CoursesPage';
 import { ImportExportPage } from './pages/ImportExportPage';
 
+const routerBasename = import.meta.env.BASE_URL.replace(/\/$/, '') || undefined;
+
 export default function App() {
   return (
     <GolfProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={routerBasename}>
         <Routes>
           <Route element={<AppLayout />}>
             <Route index element={<DashboardPage />} />
