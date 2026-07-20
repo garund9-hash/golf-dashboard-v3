@@ -48,7 +48,7 @@ export function DashboardPage() {
 
   const insight = useMemo(() => generateInsight(rounds), [rounds]);
   const recent = summary.recentRound;
-  const recentList = useMemo(() => sortRoundsDesc(rounds).slice(0, 8), [rounds]);
+  const recentList = useMemo(() => sortRoundsDesc(rounds), [rounds]);
 
   const knownCourses = useMemo(
     () => [...new Set(rounds.map((r) => r.courseName))],
@@ -290,6 +290,9 @@ export function DashboardPage() {
             <div className="card-title-row">
               <h2 className="card-title" style={{ marginBottom: 0 }}>
                 Round History
+                {recentList.length > 0 && (
+                  <span className="card-title-count">{recentList.length}</span>
+                )}
               </h2>
               <button
                 type="button"
@@ -302,7 +305,10 @@ export function DashboardPage() {
             {recentList.length === 0 ? (
               <p className="empty-state">기록된 라운드가 없습니다.</p>
             ) : (
-              <div className="table-wrap" style={{ marginTop: '0.85rem' }}>
+              <div
+                className="table-wrap table-wrap-scroll"
+                style={{ marginTop: '0.85rem' }}
+              >
                 <table className="data-table">
                   <thead>
                     <tr>

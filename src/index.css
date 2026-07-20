@@ -666,6 +666,22 @@ img {
   flex-wrap: wrap;
 }
 
+.card-title-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  padding: 0 0.5rem;
+  margin-left: 0.55rem;
+  border-radius: 999px;
+  background: var(--cream-deep);
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  vertical-align: middle;
+}
+
 .inline-actions {
   display: flex;
   align-items: center;
@@ -909,6 +925,11 @@ img {
   background: rgba(251, 248, 242, 0.9);
 }
 
+.table-wrap-scroll {
+  max-height: 26rem;
+  overflow-y: auto;
+}
+
 .data-table {
   width: 100%;
   border-collapse: collapse;
@@ -929,9 +950,11 @@ img {
   letter-spacing: 0.07em;
   color: var(--muted);
   font-weight: 700;
-  background: rgba(12, 47, 36, 0.03);
+  background: var(--cream-deep);
   position: sticky;
   top: 0;
+  z-index: 1;
+  box-shadow: inset 0 -1px 0 var(--line);
 }
 
 .data-table th.sortable {
